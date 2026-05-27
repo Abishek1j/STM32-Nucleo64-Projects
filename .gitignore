@@ -1,0 +1,15 @@
+# Ignore compiler output and build directories
+**/Debug/
+**/Release/
+**/bin/
+**/obj/
+**/*.elf
+**/*.hex
+**/*.bin
+**/*.o
+**/*.su
+**/*.d
+**/*.map
+
+# Ignore IDE-specific user layouts
+**/.settings/
