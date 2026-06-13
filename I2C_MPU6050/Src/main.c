@@ -22,6 +22,31 @@
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
 #endif
 
+//RCC registers
+#define RCC_BASE 0x40023800U
+#define RCC_AHB1ENR (*(volatile uint32_t *)(RCC_BASE + 0x30))	//Advanced High Performance Bus Enable Register
+#define RCC_APB1ENR (*(volatile uint32_t *)(RCC_BASE + 0x40))	//Advanced Peripheral Bus Enable Register
+
+
+//GPIOB registers
+#define GPIOB_BASE 0x40020400U
+#define GPIOB_MODER (*(volatile uint32_t *)(GPIOB_BASE + 0x00))		//Mode register
+#define GPIOB_OTYPER (*(volatile uint32_t *)(GPIOB_BASE + 0x04))	//Output Type register
+#define GPIOB_OSPEEDR (*(volatile uint32_t *)(GPIOB_BASE + 0x08))	//Output Speed register
+#define GPIOB_PUPDR (*(volatile uint32_t *)(GPIOB_BASE + 0x0C))		//Pull UP/Pull Down register
+#define GPIOB_AFRL (*(volatile uint32_t *)(GPIOB_BASE + 0x20))		//Alternate Function register low
+
+//I2C1 Registers
+#define I2C1_BASE 0x40005400U
+#define I2C1_CR1 (*(volatile uint32_t *)(I2C1_BASE + 0x00))		//Control register1
+#define I2C1_CR2 (*(volatile uint32_t *)(I2C1_BASE + 0x04))		//Control register2
+#define I2C1_DR (*(volatile uint32_t *)(I2C1_BASE + 0x10))		//Data register
+#define I2C1_SR1 (*(volatile uint32_t *)(I2C1_BASE + 0x14))		//Status register1
+#define I2C1_SR2 (*(volatile uint32_t *)(I2C1_BASE + 0x18))		//Status register2
+#define I2C1_CCR (*(volatile uint32_t *)(I2C1_BASE + 0x1C))		//Clock Control register
+#define I2C1_TRISE (*(volatile uint32_t *)(I2C1_BASE + 0x20))	//Time Rise(ensuring correct timing of SCL/SDA signals)
+
+
 int main(void)
 {
     /* Loop forever */
