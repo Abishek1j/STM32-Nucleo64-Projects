@@ -46,9 +46,19 @@
 #define I2C1_CCR (*(volatile uint32_t *)(I2C1_BASE + 0x1C))		//Clock Control register
 #define I2C1_TRISE (*(volatile uint32_t *)(I2C1_BASE + 0x20))	//Time Rise(ensuring correct timing of SCL/SDA signals)
 
+//MPU6050 Addresses
+#define MPU6050_ADDR	(0x068 << 1)
+#define REG_WHO_AM_I	0x75
+#define REG_PWR_MGMT_1	0x6B
+
+//Status Bit Masks
+#define I2C_SB		(1U << 0)
+#define I2C_ADDR	(1U << 1)
+#define I2C_TXE		(1U << 7)
+#define I2C_RXNE	(1U << 6)
+#define I2C_BTF		(1U << 2)
 
 int main(void)
 {
-    /* Loop forever */
-	for(;;);
+
 }
